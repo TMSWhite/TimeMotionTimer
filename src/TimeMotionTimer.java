@@ -270,21 +270,18 @@ public class TimeMotionTimer extends JApplet
 		fileMenu.setActionCommand("File");
 		fileMenu.setMnemonic((int)'F');
 		JMenuBar1.add(fileMenu);
-		loadModel.setText("Load Experiment Model...");
-//		loadModel.setActionCommand("Open...");
-		loadModel.setMnemonic((int)'L');
-		loadModel.addActionListener(this);
-		fileMenu.add(loadModel);
-		saveModel.setText("Save Experiment Model...");
-//		saveModel.setActionCommand("Save");
-		saveModel.setMnemonic((int)'S');
-		saveModel.addActionListener(this);
-		fileMenu.add(saveModel);
-		saveData.setText("Save Data...");
-//		saveData.setActionCommand("Save As...");
-		saveData.setMnemonic((int)'D');
-		saveData.addActionListener(this);
-		fileMenu.add(saveData);
+		
+		if (fileChooser.isAvailable()) {
+			loadModel.setText("Load Experiment Model...");
+			loadModel.addActionListener(this);
+			fileMenu.add(loadModel);
+			saveModel.setText("Save Experiment Model...");
+			saveModel.addActionListener(this);
+			fileMenu.add(saveModel);
+			saveData.setText("Save Data...");
+			saveData.addActionListener(this);
+			fileMenu.add(saveData);
+		}
 		fileMenu.add(JSeparator1);
 		exitItem.setText("Exit");
 		exitItem.setActionCommand("Exit");

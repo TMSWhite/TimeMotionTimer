@@ -5,15 +5,23 @@ import javax.swing.*;
 public class FileIO extends JComponent {
    public static final int LOAD = 1;
    public static final int SAVE = 2;
-	private JFileChooser jfc;
+	private JFileChooser jfc=null;
    
    public FileIO(String path) {
-      jfc = new JFileChooser(path);
+   		try {
+      		jfc = new JFileChooser(path);
+      	}
+      	catch (Throwable t) {
+      	}
    }
    
    public FileIO() {
-      jfc = new JFileChooser(".");
-		jfc.setDialogTitle("Select the XML file");
+   		try {
+      		jfc = new JFileChooser(".");
+			jfc.setDialogTitle("Select the XML file");
+		}
+		catch (Throwable t) {
+		}
    }
    
    
@@ -23,6 +31,11 @@ public class FileIO extends JComponent {
 	@return	whether successful
 	*/
 	public String loadFile(String message) {
+		if (jfc == null) {
+			System.out.println("File IO not supported on this platform/browser");
+			return null;
+		}
+		
 		jfc.setDialogTitle(message);
 		
 		BufferedReader br = null;
@@ -56,6 +69,11 @@ public class FileIO extends JComponent {
 	@param toSave	the String from which to extract the contents
 	*/
 	public void saveFile(String message, String toSave) {
+		if (jfc == null) {
+			System.out.println("File IO not supported on this platform/browser");
+			return;
+		}
+				
 		jfc.setDialogTitle(message);
 
 		BufferedWriter bw = null;
@@ -89,6 +107,10 @@ public class FileIO extends JComponent {
 	      return null;
 	   
 	   return f;
+	}
+	
+	public boolean isAvailable() {
+		return (jfc != null);
 	}
 }
 
