@@ -1,3 +1,5 @@
+/*package edu.columbia.dmi.TimeMotionTimer;*/
+
 import java.io.*;
 import java.lang.*;
 import javax.swing.*;
@@ -12,6 +14,7 @@ public class FileIO extends JComponent {
       		jfc = new JFileChooser(path);
       	}
       	catch (Throwable t) {
+      		System.err.println(t.getMessage());
       	}
    }
    
@@ -21,6 +24,7 @@ public class FileIO extends JComponent {
 			jfc.setDialogTitle("Select the XML file");
 		}
 		catch (Throwable t) {
+      		System.err.println(t.getMessage());
 		}
    }
    
@@ -56,12 +60,11 @@ public class FileIO extends JComponent {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 			return null;
-		} finally {
-			try {
-				if (br != null)
-					br.close();
-			} catch (IOException e) { }
 		}
+		try {
+			if (br != null)
+				br.close();
+		} catch (IOException e) { }
 		return sb.toString();
 	}
 	
@@ -85,12 +88,11 @@ public class FileIO extends JComponent {
 			bw.write(toSave.toCharArray());
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-		} finally {
-			try {
-				if (bw != null)
-					bw.close();
-			} catch (IOException e) { }
-		}
+		} 
+		try {
+			if (bw != null)
+				bw.close();
+		} catch (IOException e) { }
 	}
 	
 	public File getFile(int option) {

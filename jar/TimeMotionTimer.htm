@@ -1,0 +1,27 @@
+<HTML>
+<SCRIPT language=javascript>
+      var _info = navigator.userAgent;
+      var _ns = (navigator.appName.indexOf("Netscape") >= 0 && (_info.indexOf("Win") > 0 || _info.indexOf("Sun") > 0));
+      var _ie = (_info.indexOf("MSIE") > 0 );
+      if (_ns==true) {
+            document.writeln(
+            '<CENTER>' +
+            '<EMBED type="application/x-java-applet;version=1.1.3" java_ARCHIVE = "TimeMotionTimer.jar" java_CODE = "TimeMotionTimer" WIDTH = 630 HEIGHT = 470 pluginspage="http://java.sun.com/products/plugin/1.1.3/jinstall-113-win32.cab#Version=1,1,3,0"></EMBED></CENTER>');
+      } else if (_ie==true) {
+            if (_info.indexOf("Win")>0) {
+                  document.writeln('<CENTER>');
+                  document.writeln('<OBJECT classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" width=630 height=470 align="baseline" codebase="http://java.sun.com/products/plugin/1.1.3/jinstall-113-win32.cab#Version=1,1,3,0"> ');
+                  document.writeln('<PARAM NAME="code" VALUE="TimeMotionTimer">');
+                  document.writeln('<PARAM NAME="codebase" VALUE=".">');
+                  document.writeln('<PARAM NAME="archive" VALUE="TimeMotionTimer.jar">');
+                  document.writeln('<PARAM NAME="type" VALUE="application/x-java-applet;version=1.1.3"> ');
+                  document.writeln('</OBJECT>');
+                  document.writeln('</CENTER>');
+            } else {
+                  document.writeln('<APPLET ARCHIVE="TimeMotionTimer.jar" CODEBASE="." CODE="TimeMotionTimer" HEIGHT=470 WIDTH=630 ></APPLET>');
+            }
+      } else {
+            document.writeln('<APPLET ARCHIVE="TimeMotionTimer.jar" CODE="TimeMotionTimer" CODEBASE="." HEIGHT=470 WIDTH=630 ></APPLET>');
+      }
+</SCRIPT>
+</HTML>
