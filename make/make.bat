@@ -13,8 +13,6 @@ set CLASSPATH=.;%CLASSPATH%
 cd ..\src
 deltree /Y ..\class
 mkdir ..\class
-deltree /Y ..\jar
-mkdir ..\jar
 @echo ON
 javac -deprecation -g -d ../class *.java
 cd ..\class
