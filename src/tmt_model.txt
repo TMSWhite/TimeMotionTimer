@@ -1,0 +1,53 @@
+[Comments]
+This is the alternative format for specifying 
+Time Motion Timer
+
+[Identifiers]
+Subject#,3
+Level,8
+Film,5
+Location,5
+Time-of-day,8
+Method,8
+
+[Events]
+<process name="dictation">
+1,logon
+2,demographics
+3,dictate
+4,edit
+5,type
+6,review dictation
+7,load film
+8,manipulate film
+9,study film
+0,logoff
+</process>
+
+<process name="logistics">
+a,phone
+b,pager
+c,paperwork/filing
+d,giving consult
+e,seeking colleagues
+</process>
+
+<process name="education">
+f,face-with-attending
+g,face-with-co-resident
+h,phone-with-colleague
+i,taught-by-resident
+j,taught-by-attending
+k,teaching-resident
+</process>
+
+<process name="personal">
+l,resting
+m,waiting
+n,personal-call
+o,eating
+p,grooming
+q,socializing
+</process>
+r,mechanical
+s,other

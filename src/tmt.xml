@@ -1,0 +1,43 @@
+<?xml version ="1.0"?>
+<!DOCTYPE TMT SYSTEM "TimeMotionTimer.dtd">
+
+<TMT>
+   <identifiers>
+      <id name="Subject#" length="3"/>
+      <id name="Level" length="8"/>
+      <id name="Film" length="5"/>
+      <id name="Location" length="5"/>
+      <id name="Time-of-day" length="8"/>
+      <id name="Method" length="8"/>
+   </identifiers>
+   
+   <events>
+      <process name="dication">
+         <process name="setup">
+            <task name="logon" key="1"/>
+            <task name="demographics" key="2"/>
+         </process>
+         <process name="speaking">
+            <task name="dictate" key="3"/>
+         </process>
+         <process name="editing">
+            <task name="edit" key="4"/>
+            <task name="type" key="5"/>
+            <task name="review" key="6"/>
+         </process>
+         
+         <task name="logoff" key="0"/>
+         
+      </process>
+      <process name="logistics">
+         <task name="phone" key="a"/>
+         <task name="pager" key="b"/>
+         <task name="paperwork/filing" key="c"/>
+         <task name="giving consult" key="d"/>
+         <task name="seeking colleagues" key="e"/>
+      </process>
+      
+      <task name="mechanical" key="y"/>
+      <task name="other" key="z"/>
+   </events>
+</TMT>
