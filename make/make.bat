@@ -15,6 +15,7 @@ deltree /Y ..\class
 mkdir ..\class
 @echo ON
 javac -deprecation -g -d ../class *.java
+copy *.* ..\class
 cd ..\class
 jar cvf ../jar/TimeMotionTimer.jar .
 cd ..\make
